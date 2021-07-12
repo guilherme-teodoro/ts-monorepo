@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import type { Config } from '@jest/types';
-import { pathsToModuleNameMapper } from 'ts-jest/utils';
-import { compilerOptions } from '../../tsconfig.json';
+import type { Config } from '@jest/types'
+import { pathsToModuleNameMapper } from 'ts-jest/utils'
+import { compilerOptions } from '../../tsconfig.json'
 
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
@@ -10,6 +10,6 @@ const config: Config.InitialOptions = {
     // This has to match the baseUrl defined in tsconfig.json.
     prefix: '<rootDir>/../../',
   }),
-};
+}
 
-export default config;
+export default config

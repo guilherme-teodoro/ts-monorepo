@@ -1,25 +1,26 @@
-import React from 'react';
-import { EntryItem, Container, Banner, Card } from '@nighttrax/components';
-import { Entries, Entry } from '@nighttrax/codecs';
-import { getEntries } from '@nighttrax/integrations';
-import { Machine, assign } from 'xstate';
-import { useMachine } from '@xstate/react';
-import { buildCurrency } from '@nighttrax/utils';
-import currency from 'currency.js';
-import 'tailwindcss/tailwind.css';
+import React from 'react'
+import { EntryItem, Container, Banner, Card } from '@nighttrax/components'
+import { Entries, Entry } from '@nighttrax/codecs'
+import { getEntries } from '@nighttrax/integrations'
+import { Machine, assign } from 'xstate'
+import { useMachine } from '@xstate/react'
+import { buildCurrency } from '@nighttrax/utils'
+import currency from 'currency.js'
+import 'tailwindcss/tailwind.css'
 
 interface EntriesMachineStateSchema {
   states: {
-    idle: {};
-    fetch: {};
-    success: {};
-  };
+    idle: {}
+    fetch: {}
+    success: {}
+  }
 }
 
 interface EntriesMachineContext {
-  entries: Entries;
+  entries: Entries
 }
-export type EntriesMachineEvents = { type: 'FETCH' };
+
+export type EntriesMachineEvents = { type: 'FETCH' }
 
 const EntriesMachine = Machine<
   EntriesMachineContext,
@@ -59,14 +60,14 @@ const EntriesMachine = Machine<
       getEntries,
     },
   }
-);
+)
 
 const Index = () => {
-  const [state, send] = useMachine(EntriesMachine);
+  const [state] = useMachine(EntriesMachine)
 
   const sum = state.context.entries.reduce((acc: currency, d: Entry) => {
-    return d.type === 'credit' ? acc.add(d.amount) : acc.subtract(d.amount);
-  }, buildCurrency(0));
+    return d.type === 'credit' ? acc.add(d.amount) : acc.subtract(d.amount)
+  }, buildCurrency(0))
 
   return (
     <>
@@ -81,7 +82,7 @@ const Index = () => {
         </Card>
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

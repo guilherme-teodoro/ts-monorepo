@@ -33,8 +33,8 @@ If you use `Babel` then see [this example](examples/jest-babel) from the [Babel]
 If you use [ts-jest](https://github.com/kulshekhar/ts-jest) then you can use its `pathsToModuleNameMapper` helper:
 
 ```js
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
-const { compilerOptions } = require('../../tsconfig.json');
+const { pathsToModuleNameMapper } = require('ts-jest/utils')
+const { compilerOptions } = require('../../tsconfig.json')
 
 module.exports = {
   preset: 'ts-jest',
@@ -43,7 +43,7 @@ module.exports = {
     // This has to match the baseUrl defined in tsconfig.json.
     prefix: '<rootDir>/../../',
   }),
-};
+}
 ```
 
 See the full example [here](examples/jest-tsjest).
@@ -58,13 +58,13 @@ module.exports = {
     // Let Babel compile outside of src/.
     const tsRule = config.module.rules.find(
       (rule) => rule.test && rule.test.toString().includes('tsx|ts')
-    );
-    tsRule.include = undefined;
-    tsRule.exclude = /node_modules/;
+    )
+    tsRule.include = undefined
+    tsRule.exclude = /node_modules/
 
-    return config;
+    return config
   },
-};
+}
 ```
 
 See the full example [here](examples/nextjs).

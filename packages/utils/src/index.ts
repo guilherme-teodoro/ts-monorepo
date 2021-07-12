@@ -1,6 +1,6 @@
-import Currency from 'currency.js';
+import Currency from 'currency.js'
 
-export type currency = Currency;
+export type currency = Currency
 
 export const buildCurrency = (s: number) =>
   Currency(s, {
@@ -9,4 +9,4 @@ export const buildCurrency = (s: number) =>
     separator: '.',
     precision: 2,
     fromCents: true,
-  });
+  })

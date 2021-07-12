@@ -1,6 +1,6 @@
-import React from 'react';
-import { Entry } from '@nighttrax/codecs';
-import { format } from 'date-fns';
+import React from 'react'
+import { Entry } from '@nighttrax/codecs'
+import { format } from 'date-fns'
 
 export const EntryItem: React.FC<{ entry: Entry }> = ({ entry }) => (
   <div className="flex w-full">
@@ -15,4 +15,4 @@ export const EntryItem: React.FC<{ entry: Entry }> = ({ entry }) => (
       {entry.amount.format()}
     </div>
   </div>
-);
+)

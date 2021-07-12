@@ -1,0 +1,42 @@
+{
+  "name": "ts-monorepo",
+  "description": "Template for setting up a TypeScript monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "docs": "doctoc --title '**Table of content**' README.md",
+    "clean": "lerna run clean",
+    "build": "lerna run build",
+    "pub": "lerna publish",
+    "test": "lerna run test",
+    "lint": "eslint --ext js,ts,tsx .",
+    "dev:backoffice": "lerna run dev --scope=@nighttrax/backoffice"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
+    "@nighttrax/eslint-config-tsx": "~8.0.0",
+    "@types/jest": "^26.0.23",
+    "babel-jest": "^27.0.6",
+    "doctoc": "~2.0.0",
+    "eslint": "~7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "~2.23.0",
+    "jest": "^27.0.6",
+    "json-server": "^0.16.3",
+    "lerna": "~4.0.0",
+    "prettier": "^2.3.2",
+    "react": "~17.0.0",
+    "typescript": "~4.3.0"
+  },
+  "dependencies": {
+    "currency.js": "^2.0.4",
+    "date-fns": "^2.22.1",
+    "fp-ts": "^2.10.5",
+    "io-ts": "^2.2.16"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "amount": 123400,
+      "description": "Salário",
+      "date": "2021-06-29T18:20:05.785Z",
+      "type": "credit"
+    },
+    {
+      "id": 2,
+      "amount": 1234,
+      "description": "Almoço",
+      "date": "2021-06-29T18:20:05.785Z",
+      "type": "debit"
+    }
+  ]
+}
